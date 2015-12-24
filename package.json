@@ -1,6 +1,6 @@
 {
   "name": "lets-s_frontend",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "for bilding frontend",
   "main": "index.js",
   "scripts": {
