@@ -23,7 +23,7 @@ gulp.task('concat-css', function () {
 
 // move html files to app folder
 gulp.task('html', function() {
-   gulp.src('index.html')
+   gulp.src('*.html')
    .pipe(gulp.dest('app'))
    .pipe(connect.reload());
 });
@@ -40,14 +40,14 @@ gulp.task('less', function () {
 
 // move images for styles
 gulp.task('img', function() {
-   return gulp.src(['img/*.jpg','img/*.png',])
+   return gulp.src(['img/*.',])
    .pipe(gulp.dest('app/img/'))
    .pipe(connect.reload())
 });
 
 // move images for conten
 gulp.task('img2', function() {
-   return gulp.src([	'images/*.jpg','images/*.png',])
+   return gulp.src([	'images/*.',])
    .pipe(gulp.dest('app/images/'))
    .pipe(connect.reload())
 });
@@ -68,7 +68,7 @@ gulp.task('js', function() {
 
 // move fonts
 gulp.task('fonts', function() {
-   return gulp.src([	'fonts/*.eot','fonts/*.woff','fonts/*.svg','fonts/*.ttf'])
+   return gulp.src([	'fonts/*.'])
    .pipe(gulp.dest('app/fonts/'))
 });
 
