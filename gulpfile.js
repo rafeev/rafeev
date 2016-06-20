@@ -40,14 +40,14 @@ gulp.task('less', function () {
 
 // move images for styles
 gulp.task('img', function() {
-   return gulp.src(['img/*.',])
+   return gulp.src(['img/*.jpg','img/*.png','img/*.svg','img/*.gif'])
    .pipe(gulp.dest('app/img/'))
    .pipe(connect.reload())
 });
 
 // move images for conten
 gulp.task('img2', function() {
-   return gulp.src([	'images/*.',])
+   return gulp.src(['images/*.jpg','images/*.png','images/*.svg','images/*.gif'])
    .pipe(gulp.dest('app/images/'))
    .pipe(connect.reload())
 });
@@ -68,7 +68,7 @@ gulp.task('js', function() {
 
 // move fonts
 gulp.task('fonts', function() {
-   return gulp.src([	'fonts/*.'])
+   return gulp.src([	'fonts/*.ttf','fonts/*.woff','fonts/*.svg','fonts/*.eot'])
    .pipe(gulp.dest('app/fonts/'))
 });
 
