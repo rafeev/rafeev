@@ -70,12 +70,24 @@ gulp.task('js', function() {
 gulp.task('fonts', function() {
    return gulp.src([	'fonts/*.ttf','fonts/*.woff','fonts/*.svg','fonts/*.eot'])
    .pipe(gulp.dest('app/fonts/'))
+   .pipe(connect.reload())
 });
 
 // watcher
 gulp.task('watch', function() {
    gulp.watch('css/*.css', ['concat-css'])
    gulp.watch('*.html', ['html'])
+   gulp.watch('img/*.jpg', ['img'])
+   gulp.watch('img/*.png', ['img'])
+   gulp.watch('img/*.gif', ['img'])
+   gulp.watch('images/*.jpg', ['img2'])
+   gulp.watch('images/*.png', ['img2'])
+   gulp.watch('images/*.gif', ['img2'])
+
+   gulp.watch('*.ttf', ['fonts'])
+   gulp.watch('*.woff', ['fonts'])
+   gulp.watch('*.svg', ['fonts'])
+   gulp.watch('*.eot', ['fonts'])
    gulp.watch('less/*.less', ['less'])
    gulp.watch('js/*.js', ['js'])
 });

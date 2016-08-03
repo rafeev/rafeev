@@ -1,17 +1,37 @@
-@import "_variables.less";
-@import "mixins/_buttons.less";
-
-@import "modules/_reset.less";
-
+@import "_reset.less";
 @import "_fonts.less";
-@import "_texts.less";
 
-@import "partials/_header.less";
-@import "partials/_main.less";
-@import "partials/_footer.less";
 
-@import "modules/_buttons.less";
-@import "modules/_forms.less";
+.clear() {
+	clear: both;
+	display: block;
+	overflow: hidden;
+}
+
+.radius(@rds: 5px) {
+	-webkit-border-radius: @rds;
+	-moz-border-radius: @rds;
+	border-radius: @rds;
+}
+
+.transition(@trns: .2s) {
+	-webkit-transition: @trns;
+	-moz-transition: @trns;
+	transition: @trns;
+}
+
+
+
+*, *:after, *:before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html,body {
+	margin: 0;
+	padding: 0;
+}
 
 
 
