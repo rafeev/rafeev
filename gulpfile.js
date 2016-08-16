@@ -68,7 +68,7 @@ gulp.task('js', function() {
 
 // move fonts
 gulp.task('fonts', function() {
-   return gulp.src([	'fonts/*.ttf','fonts/*.woff','fonts/*.svg','fonts/*.eot'])
+   return gulp.src([	'fonts/*.ttf','fonts/*.woff','fonts/*.woff2','fonts/*.svg','fonts/*.eot'])
    .pipe(gulp.dest('app/fonts/'))
    .pipe(connect.reload())
 });
@@ -83,9 +83,9 @@ gulp.task('watch', function() {
    gulp.watch('images/*.jpg', ['img2'])
    gulp.watch('images/*.png', ['img2'])
    gulp.watch('images/*.gif', ['img2'])
-
    gulp.watch('*.ttf', ['fonts'])
    gulp.watch('*.woff', ['fonts'])
+   gulp.watch('*.woff2', ['fonts'])
    gulp.watch('*.svg', ['fonts'])
    gulp.watch('*.eot', ['fonts'])
    gulp.watch('less/*.less', ['less'])
