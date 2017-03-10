@@ -16,7 +16,7 @@ gulp.task('connect', function() {
 // concat css
 gulp.task('concat-css', function () {
    return gulp.src('css/*.css')
-   .pipe(concatCss("style.css"))
+   .pipe(concatCss('style.css'))
    .pipe(gulp.dest('app/css'))
    .pipe(connect.reload());
 });
@@ -30,7 +30,7 @@ gulp.task('html', function() {
 
 // less compilation
 gulp.task('less', function () {
-   return gulp.src('less/style.less')
+   return gulp.src('less/*.less')
    .pipe(less({
       paths: [ path.join(__dirname, 'less', 'includes') ]
    }))
@@ -40,21 +40,21 @@ gulp.task('less', function () {
 
 // move images for styles
 gulp.task('img', function() {
-   return gulp.src(['img/*.jpg','img/*.png','img/*.svg','img/*.gif'])
+   return gulp.src(['img/*.*'])
    .pipe(gulp.dest('app/img/'))
    .pipe(connect.reload())
 });
 
 // move images for conten
 gulp.task('img2', function() {
-   return gulp.src(['images/*.jpg','images/*.png','images/*.svg','images/*.gif'])
+   return gulp.src(['images/*.*'])
    .pipe(gulp.dest('app/images/'))
    .pipe(connect.reload())
 });
 
 // move favicons
 gulp.task('favicon', function() {
-   return gulp.src([	'img/favicon/*.jpg','img/favicon/*.xml','img/favicon/*.png','img/favicon/*.ico','img/favicon/*.json',])
+   return gulp.src([	'img/favicon/*.*',])
    .pipe(gulp.dest('app/img/favicon/'))
    .pipe(connect.reload())
 });
@@ -68,7 +68,7 @@ gulp.task('js', function() {
 
 // move fonts
 gulp.task('fonts', function() {
-   return gulp.src([	'fonts/*.ttf','fonts/*.woff','fonts/*.woff2','fonts/*.svg','fonts/*.eot'])
+   return gulp.src([	'fonts/*.*'])
    .pipe(gulp.dest('app/fonts/'))
    .pipe(connect.reload())
 });
@@ -77,22 +77,10 @@ gulp.task('fonts', function() {
 gulp.task('watch', function() {
    gulp.watch('css/*.css', ['concat-css'])
    gulp.watch('*.html', ['html'])
-   gulp.watch('img/*.jpg', ['img'])
-   gulp.watch('img/*.png', ['img'])
-   gulp.watch('img/*.gif', ['img'])
-   gulp.watch('img/favicon/*.jpg', ['favicon'])
-   gulp.watch('img/favicon/*.xml', ['favicon'])
-   gulp.watch('img/favicon/*.png', ['favicon'])
-   gulp.watch('img/favicon/*.ico', ['favicon'])
-   gulp.watch('img/favicon/*.json', ['favicon'])
-   gulp.watch('images/*.jpg', ['img2'])
-   gulp.watch('images/*.png', ['img2'])
-   gulp.watch('images/*.gif', ['img2'])
-   gulp.watch('fonts/*.ttf', ['fonts'])
-   gulp.watch('fonts/*.woff', ['fonts'])
-   gulp.watch('fonts/*.woff2', ['fonts'])
-   gulp.watch('fonts/*.svg', ['fonts'])
-   gulp.watch('fonts/*.eot', ['fonts'])
+   gulp.watch('img/*.*', ['img'])
+   gulp.watch('img/favicon/*.*', ['favicon'])
+   gulp.watch('images/*.*', ['img2'])
+   gulp.watch('fonts/*.*', ['fonts'])
    gulp.watch('less/*.less', ['less'])
    gulp.watch('js/*.js', ['js'])
 });
